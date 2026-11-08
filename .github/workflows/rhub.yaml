@@ -45,6 +45,7 @@ jobs:
     if: ${{ needs.setup.outputs.containers != '[]' }}
     runs-on: ubuntu-latest
     name: ${{ matrix.config.label }}
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
@@ -72,6 +73,7 @@ jobs:
     if: ${{ needs.setup.outputs.platforms != '[]' }}
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.label }}
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
